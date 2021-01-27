@@ -21,10 +21,15 @@ export const Contacts = () => {
 				</p>
 				<div id="contacts" className="panel-collapse collapse show" aria-expanded="true">
 					<ul className="list-group pull-down" id="contact-list">
-						<ContactCard onDelete={() => setState({ showModal: true })} />
-						<ContactCard />
-						<ContactCard />
-						<ContactCard />
+						{store.contacts.map((element, index) => {
+							return (
+								<ContactCard
+									key={index}
+									contact={element}
+									onDelete={() => setState({ showModal: true })}
+								/>
+							);
+						})}
 					</ul>
 				</div>
 			</div>
