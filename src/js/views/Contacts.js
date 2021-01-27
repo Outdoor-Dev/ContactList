@@ -6,8 +6,10 @@ import { Modal } from "../component/Modal";
 
 export const Contacts = () => {
 	const [state, setState] = useState({
-		showModal: false
+		showModal: false,
+		userId: 1841
 	});
+
 	const { store, actions } = useContext(Context);
 	console.log(store.contacts);
 
@@ -33,7 +35,12 @@ export const Contacts = () => {
 					</ul>
 				</div>
 			</div>
-			<Modal show={state.showModal} onClose={() => setState({ showModal: false })} />
+			<Modal
+				userId={state.userId}
+				onDelete={actions.deleteContact()}
+				show={state.showModal}
+				onClose={() => setState({ showModal: false })}
+			/>
 		</div>
 	);
 };

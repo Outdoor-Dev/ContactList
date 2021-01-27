@@ -49,20 +49,11 @@ export const ContactCard = props => {
 	);
 };
 
-/**
- * Define the data-types for
- * your component's properties
- **/
 ContactCard.propTypes = {
 	contact: PropTypes.object,
 	history: PropTypes.object,
 	onDelete: PropTypes.func
 };
-
-/**
- * Define the default values for
- * your component's properties
- **/
 ContactCard.defaultProps = {
 	onDelete: null
 };
