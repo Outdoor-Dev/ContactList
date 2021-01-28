@@ -1,6 +1,6 @@
 const url = "https://assets.breatheco.de/apis/fake/contact/";
 
-const getState = ({ getStore, setStore }) => {
+const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
 			contacts: []
@@ -14,10 +14,7 @@ const getState = ({ getStore, setStore }) => {
 						"Content-Type": "application/json"
 					}
 				})
-					.then(response => response.json())
-					.then(data => {
-						console.log(data);
-					})
+					.then(() => getActions().allContacts())
 					.catch(error => console.log(error));
 			},
 
@@ -36,10 +33,7 @@ const getState = ({ getStore, setStore }) => {
 					},
 					body: JSON.stringify(contact)
 				})
-					.then(response => response.json())
-					.then(data => {
-						console.log(data);
-					})
+					.then(() => getActions().allContacts())
 					.catch(error => console.log(error));
 			}
 

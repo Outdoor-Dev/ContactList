@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { Context } from "../store/appContext";
 
 export const AddContact = () => {
@@ -11,7 +11,7 @@ export const AddContact = () => {
 		agenda_slug: "pachito"
 	});
 	const { actions } = useContext(Context);
-
+	const history = useHistory();
 	console.log(contact);
 	return (
 		<div className="container">
@@ -61,7 +61,10 @@ export const AddContact = () => {
 					<button
 						type="button"
 						className="btn btn-primary form-control"
-						onClick={() => actions.addSingleContact(contact)}>
+						onClick={() => {
+							actions.addSingleContact(contact);
+							history.push("/");
+						}}>
 						save
 					</button>
 					<Link className="mt-3 w-100 text-center text-white" to="/">
