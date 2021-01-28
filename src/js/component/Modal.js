@@ -1,13 +1,15 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { withRouter } from "react-router-dom";
 import PropTypes from "prop-types";
+import { Context } from "../store/appContext";
 
 export const Modal = props => {
 	const [state, setState] = useState({
 		//initialize state here
 	});
+	const { store, actions } = useContext(Context);
 	const handleDelete = () => {
-		props.onDelete(props.userId);
+		actions.deleteContact(props.id);
 		props.onClose(false);
 	};
 
@@ -57,8 +59,10 @@ Modal.propTypes = {
 	history: PropTypes.object,
 	onClose: PropTypes.func,
 	show: PropTypes.bool,
-	onDelete: PropTypes.func,
-	userId: PropTypes.number
+	id: PropTypes.string,
+	onDelete: PropTypes.func
+	// onDelete: PropTypes.func,
+	// userId: PropTypes.number
 };
 
 Modal.defaultProps = {

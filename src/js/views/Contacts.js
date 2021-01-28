@@ -7,7 +7,7 @@ import { Modal } from "../component/Modal";
 export const Contacts = () => {
 	const [state, setState] = useState({
 		showModal: false,
-		userId: 1841
+		id: ""
 	});
 
 	const { store, actions } = useContext(Context);
@@ -17,7 +17,7 @@ export const Contacts = () => {
 		<div className="container">
 			<div>
 				<p className="text-right my-3">
-					<Link className="btn btn-success" to="/add">
+					<Link className="btn btn" to="/add">
 						Add new contact
 					</Link>
 				</p>
@@ -28,7 +28,7 @@ export const Contacts = () => {
 								<ContactCard
 									key={index}
 									contact={element}
-									onDelete={() => setState({ showModal: true })}
+									onDelete={() => setState({ showModal: true, id: element.id })}
 								/>
 							);
 						})}
@@ -36,9 +36,10 @@ export const Contacts = () => {
 				</div>
 			</div>
 			<Modal
-				userId={state.userId}
-				onDelete={actions.deleteContact()}
+				// userId={state.userId}
+				// onDelete={actions.deleteContact()}
 				show={state.showModal}
+				id={state.id}
 				onClose={() => setState({ showModal: false })}
 			/>
 		</div>

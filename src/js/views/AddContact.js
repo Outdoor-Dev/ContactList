@@ -16,9 +16,9 @@ export const AddContact = () => {
 	return (
 		<div className="container">
 			<div>
-				<h1 className="text-center mt-5">Add a new contact</h1>
+				<h1 className="text-center mt-5 text-white ">Add a new contact</h1>
 				<form>
-					<div className="form-group">
+					<div className="form-group text-white">
 						<label>Full Name</label>
 						<input
 							type="text"
@@ -28,7 +28,7 @@ export const AddContact = () => {
 							onChange={e => setContact({ ...contact, full_name: e.target.value })}
 						/>
 					</div>
-					<div className="form-group">
+					<div className="form-group text-white">
 						<label>Email</label>
 						<input
 							type="email"
@@ -38,7 +38,7 @@ export const AddContact = () => {
 							onChange={e => setContact({ ...contact, email: e.target.value })}
 						/>
 					</div>
-					<div className="form-group">
+					<div className="form-group text-white">
 						<label>Phone</label>
 						<input
 							type="phone"
@@ -48,7 +48,7 @@ export const AddContact = () => {
 							onChange={e => setContact({ ...contact, phone: e.target.value })}
 						/>
 					</div>
-					<div className="form-group">
+					<div className="form-group text-white">
 						<label>Address</label>
 						<input
 							type="text"
@@ -64,7 +64,7 @@ export const AddContact = () => {
 						onClick={() => actions.addSingleContact(contact)}>
 						save
 					</button>
-					<Link className="mt-3 w-100 text-center" to="/">
+					<Link className="mt-3 w-100 text-center text-white" to="/">
 						or get back to contacts
 					</Link>
 				</form>

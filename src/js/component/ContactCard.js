@@ -9,24 +9,28 @@ export const ContactCard = props => {
 	});
 
 	return (
-		<li className="list-group-item">
-			<div className="row w-100">
-				<div className="col-12 col-sm-6 col-md-3 px-0">
-					<img src={MikePhoto} alt="Mike Anamendolla" className="rounded-circle mx-auto d-block img-fluid" />
+		<li className="list-group-item ">
+			<div className="row w-100 ">
+				<div className="col-12 col-sm-6 col-md-3 px-0 ">
+					<img
+						src="https://images.unsplash.com/photo-1593536604657-c7087cdc9c9c?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1100&q=80"
+						alt="Mike Anamendolla"
+						className="rounded-circle mx-auto d-block img-fluid"
+					/>
 				</div>
 				<div className="col-12 col-sm-6 col-md-9 text-center text-sm-left">
 					<div className=" float-right">
 						<button className="btn">
-							<i className="fas fa-pencil-alt mr-3" />
+							<i className="icons fas fa-pencil-alt mr-3" />
 						</button>
 						<button className="btn" onClick={() => props.onDelete()}>
-							<i className="fas fa-trash-alt" />
+							<i className=" icons fas fa-trash-alt" />
 						</button>
 					</div>
-					<label className="name lead">{props.contact.full_name}</label>
+					<label className="name lead text-white">{props.contact.full_name}</label>
 					<br />
 					<i className="fas fa-map-marker-alt text-muted mr-3" />
-					<span className="text-muted">{props.contact.address}</span>
+					<span className="text-white">{props.contact.address}</span>
 					<br />
 					<span
 						className="fa fa-phone fa-fw text-muted mr-3"
@@ -34,7 +38,7 @@ export const ContactCard = props => {
 						title=""
 						data-original-title="(870) 288-4149"
 					/>
-					<span className="text-muted small">{props.contact.phone}</span>
+					<span className="text-white small">{props.contact.phone}</span>
 					<br />
 					<span
 						className="fa fa-envelope fa-fw text-muted mr-3"
@@ -42,7 +46,7 @@ export const ContactCard = props => {
 						data-original-title=""
 						title=""
 					/>
-					<span className="text-muted small text-truncate">{props.contact.email}</span>
+					<span className="text-white small text-truncate">{props.contact.email}</span>
 				</div>
 			</div>
 		</li>
